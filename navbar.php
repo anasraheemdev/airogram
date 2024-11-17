@@ -383,23 +383,11 @@
 
 
 <script>
-
-
-let r_nav = document.querySelector(".r-nav");
-        let profile_icon = document.querySelector(".profile-icon");
-
-        profile_icon.addEventListener("click", () => {
-            r_nav.style = "display:block";
-            r_nav.style = "position: absolute; top:50px; right:10px; border:2px solid white; padding:20px; display:block; background-color: azure;";
-        })
-        window.addEventListener("click", (e) => {
-            if (e.target.classList.contains('fa-user')) {
-                r_nav.style = "position: absolute; top:50px; right:10px; border:2px solid white; padding:20px; display:none; background-color: azure;";
-            }
-        })
-
-
-
-
-
+    document.addEventListener('DOMContentLoaded', function() {
+        var dropdownElementList = [].slice.call(document.querySelectorAll('[data-bs-toggle="dropdown"]'))
+        var dropdownList = dropdownElementList.map(function(dropdownToggleEl) {
+            return new bootstrap.Dropdown(dropdownToggleEl)
+        });
+    });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
